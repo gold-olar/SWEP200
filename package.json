@@ -1,0 +1,29 @@
+{
+  "name": "swep-200",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./bin/start",
+    "test": "mocha --recursive"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "hbs": "^4.0.4",
+    "http-errors": "^1.7.3",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3"
+  }
+}

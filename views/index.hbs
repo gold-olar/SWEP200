@@ -1,0 +1,94 @@
+
+    <header>
+        <div class="nav-logo">
+            <a href="/index"><img src="images/school.png" class="logo " alt="Logo"></a>
+            <a href="/faq" class="support-btn">Support</a>
+        </div>
+        <div class="Navbar__Link Navbar__Link-toggle">
+            <img src="images/bars-solid.svg" width="25%" alt="">
+        </div>
+        <nav class="nav">
+            <ul class="nav__links">
+                <li><a href="/about">About</a></li>
+                <li><a href="/lecturers" class="sign-up">Lecturers</a></li>
+                <li><a href="/student">Students</a></li>
+                <li><a href="/contact_us" class="sign-up">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- page content -->
+
+    <div class="container">
+        <div class='row'>
+            <div class='column'>
+                <div class='column-left'>
+                    <div class="get-started">
+                        <h3 class="education">Education is the best legacy</h3>
+                        <p class="classroom">Manage classroom. Engage students. Easy to <br> learn.</p>
+                        <p class="start">Get Started as a...</p>
+                        <a href="/lecturers" class="learn-more"><button>Lecturer</button></a>
+                        <a href="/student" class="learn-more"><button>Student</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class='column'>
+                <div class='column-right'>
+                    <img src="images/Team Spirit.svg" class="image-right" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class='row-3'>
+            <div class='column'>
+                <div class='column-left'>
+                    <img src="images/undraw_exams_g4ow (2).svg" class="image-left" alt="">
+                </div>
+            </div>
+            <div class='column'>
+                <div class='column-right-3'>
+                    <div class="student-section">
+                        <h3 class="std-plat">A learning platform for students</h3>
+                        <p class="access">Gain access to class materials and receive <br> announcements.</p>
+                        <a href="/student" class="show-more">Show More...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class='row'>
+            <div class='column'>
+                <div class='column-left-2'>
+                    <div class="lecturer-section">
+                        <h3 class="lecturer">A teaching platform for lecturers</h3>
+                        <p class="send">Send class materials, send announcements to students and make learning accessible.</p>
+                        <a href="/lecturers" class="show-more">Show More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class='column'>
+                <div class='column-right'>
+                    <img src="images/undraw_teaching_f1cm.svg" class="image-right" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section -->
+   
+    
+<script src="js/app.js"></script>
+<script>
+    const toggle = document.getElementById('toggle');
+    const body = document.body;
+
+    toggle.addEventListener('input', e => {
+        const isChecked = e.target.checked;
+
+        if (isChecked) {
+            body.classList.add('dark-theme');
+        } else {
+            body.classList.remove('dark-theme');
+        }
+    });
+</script>

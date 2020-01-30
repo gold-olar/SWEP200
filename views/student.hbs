@@ -1,0 +1,83 @@
+<header>
+    <div class="nav-logo">
+        <a href="/index"><img src="images/school.png" class="logo" alt="Logo"></a>
+        <a href="/faq" class="support-btn">Support</a>
+    </div>
+    <div class="Navbar__Link Navbar__Link-toggle">
+        <img src="images/bars-solid.svg" width="25%" alt="">
+    </div>
+    <nav class="nav">
+        <ul class="nav__links">
+            <li><a href="/student-login">Log In</a></li>
+            <li><a href="/student_sign_up" class="sign-up">Sign Up</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- page content -->
+
+<div class="container">
+    <div class='row'>
+        <div class='column'>
+            <div class='column-left'>
+                <div class="get-started">
+                    <h3 class="education-1">Like everything else in life, study requires your passion and excitement.</h3>
+                    <a href="/student_sign_up" class="learn-more"><button>Create Student Account</button></a>
+                </div>
+            </div>
+        </div>
+        <div class='column'>
+            <div class='column-right'>
+                <img src="images/Studying 1.svg" class="image-right" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class='row-3'>
+        <div class='column'>
+            <div class='column-left'>
+                <img src="images/Bookshelves 1.svg" class="image-left" alt="">
+            </div>
+        </div>
+        <div class='column'>
+            <div class='column-right-3'>
+                <div class="student-section">
+                    <h3 class="education-1">Marks are good but aim to get the knowledge that comes with learning because knowledge is what you have left when you
+                    leave the four walls of a class.</h3>
+                   </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class='row'>
+        <div class='column'>
+            <div class='column-left-2'>
+                <div class="teacher-section">
+                    <h3 class="education-1">If you desire first position, be ready to learn what people in first position do with what they have learnt.</h3>
+                    </div>
+            </div>
+        </div>
+        <div class='column'>
+            <div class='column-right'>
+                <img src="images/Graduation 1.svg" class="image-right" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+    <script>
+        const toggle = document.getElementById('toggle');
+        const body = document.body;
+
+        toggle.addEventListener('input', e => {
+            const isChecked = e.target.checked;
+
+            if (isChecked) {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+        });
+    </script>

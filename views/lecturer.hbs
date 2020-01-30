@@ -1,0 +1,83 @@
+ <header>
+        <div class="nav-logo">
+            <a href="/index"><img src="images/school.png" class="logo" alt="Logo"></a>
+            <a href="/faq" class="support-btn">Support</a>
+        </div>
+        <div class="Navbar__Link Navbar__Link-toggle">
+            <img src="images/bars-solid.svg" width="25%" alt="">
+        </div>
+        <nav class="nav">
+            <ul class="nav__links">
+                <li><a href="/lecturer-login">Log In</a></li>
+                <li><a href="/lecturer_sign_up" class="sign-up">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- page content -->
+
+    <div class="container">
+        <div class='row'>
+            <div class='column'>
+                <div class='column-left'>
+                    <div class="get-started">
+                        <h3 class="education-1">A true lecturer is one that can make you touch the skies with the gentlest of proddings.</h3>
+                        <a href="/lecturer_sign_up" class="learn-more"><button>Create lecturer Account</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class='column'>
+                <div class='column-right'>
+                    <img src="images/Teacher 1.svg" class="image-right" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class='row-3'>
+            <div class='column'>
+                <div class='column-left'>
+                    <img src="images/Professor 1.svg" class="image-left" alt="">
+                </div>
+            </div>
+            <div class='column'>
+                <div class='column-right-3'>
+                    <div class="student-section">
+                        <h3 class="education-1">A lecturer is a learner who loves to help others learn</h3>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class='row'>
+            <div class='column'>
+                <div class='column-left-2'>
+                    <div class="lecturer-section">
+                        <h3 class="education-1">Education provides the key to success through the door unlocked by a lecturer</h3>
+                       </div>
+                </div>
+            </div>
+            <div class='column'>
+                <div class='column-right'>
+                    <img src="images/Personal Notebook 1.svg" class="image-right" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section -->
+  
+    <script src="js/app.js"></script>
+    <script>
+        const toggle = document.getElementById('toggle');
+        const body = document.body;
+
+        toggle.addEventListener('input', e => {
+            const isChecked = e.target.checked;
+
+            if (isChecked) {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+        });
+    </script>
