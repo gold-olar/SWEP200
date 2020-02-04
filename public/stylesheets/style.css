@@ -7,7 +7,7 @@
 }
 body {
     font-family: 'Lato', sans-serif;
-    position: absolute;
+    /* position: absolute; */
 }
 li, a {
   font-weight: 500;
@@ -86,8 +86,8 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 1px 10%;
-  box-shadow: 0px 1px 10px #999;  
-  position: fixed;
+  box-shadow: 0px 1px 10px #999;
+  /* position: fixed; */
   width: 100%;
   background-color: #fff;
 }
@@ -123,7 +123,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
 }
 
 .column {
@@ -144,7 +144,7 @@ header {
   margin-top: 5rem;
 }
 .column-right-3 {
-    margin-top: 15rem; 
+    margin-top: 15rem;
     margin-left: 5rem;
 }
 .column-left-2 {
@@ -172,7 +172,7 @@ header {
     margin-top: 10px;
 }
 .column-right-3 {
-    margin-top: 15rem; 
+    margin-top: 15rem;
     margin-left: 5rem;
 }
 .column-left-2 {
@@ -206,7 +206,7 @@ button:hover {
 
 .container-fluid {
     background-color: #274970;
-    margin-top: 15rem;
+    /* margin-top: 15rem; */
     width: 100%;
 }
 .social-icons {
@@ -256,13 +256,13 @@ button:hover {
     }
     .nav__links {
        display: none;
-       flex-direction: column; 
+       flex-direction: column;
        justify-content: center;
        align-items: center;
        margin-top: 5rem;
        padding-top: 30px;
-       height: 140px; 
-       
+       height: 140px;
+
     }
     .Navbar__Link-toggle {
         align-self: flex-end;
@@ -273,9 +273,9 @@ button:hover {
         left: 75%;
     }
     .Navbar__ToggleShow {
-        display: flex; 
+        display: flex;
     }
-    
+
    .row {
     display: flex;
     flex-direction: column-reverse;
@@ -308,7 +308,7 @@ button:hover {
         width: 90%;
     }
     .column-right-3 {
-        margin-top: 5rem; 
+        margin-top: 5rem;
         text-align: center;
         margin-left: 0rem;
     }
@@ -349,7 +349,11 @@ button:hover {
   }
 }
 
+.logo{
+  width: 90px !important;
+  padding: 4%;
 
+}
 .open {
   height: 250px;
 }
