@@ -1,5 +1,5 @@
 
-const Student = require('../models/Student');
+const Teacher = require('../models/Teacher');
 const Secret = process.env.SECRET;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -7,30 +7,31 @@ const jwt = require('jsonwebtoken');
 
 const create = async (req, res) => {
     try {
-        const { username, password, email, level, confirmPassword } = req.body;
-        if (!username || !password || !email || !level) {
-            res.render('create', {
+        const { username, password, email,  confirmPassword } = req.body;
+        if (!username || !password || !email) {
+            res.render('lectureSignup', {
                 message: 'Please fill in all fields.'
             })
         }
         if(password !== confirmPassword){
-            res.render('create', {
+            res.render('lectureSignup', {
                 message: `Passwords don't match`,
             })
         }
 
-        const existingUser = await Student.findOne({ email });
+        const existingUser = await Teacher.findOne({ email });
         if (existingUser)
-            return res.render('create', { message: "User already exists with this email." })
+            return res.render('lectureSignup', { message: "User already exists with this email." })
 
 
-        const userParams = { username, password, email, level };
-        const newStudent = new Student(userParams);
-        let savedUser = await newStudent.save();
+        const userParams = { username, password, email, };
+        const newTeacher = new Teacher(userParams);
+        let savedUser = await newTeacher.save();
 
 
-        res.render('studentsLogin', {
+        res.render('lectureLogin', {
             email, password,
+            message: "Please, login to continue."
         })
     } catch (error) {
         return res.render('error', {
@@ -43,9 +44,9 @@ const create = async (req, res) => {
 
 const login = async (req, res) => {
     const { email, password } = req.body;
-    const user = await Student.findOne({ email });
+    const user = await Teacher.findOne({ email });
     if (!user)
-        return res.render('login', { message: 'User not found, please register' });
+        return res.render('lectureLogin', { message: 'User not found, please register' });
 
     await bcrypt.compare(password, user.password, (err, isMatch) => {
         if (isMatch) {
@@ -54,9 +55,9 @@ const login = async (req, res) => {
             // localStorage.setItem('token', token);
 
             res.cookie('auth', token);
-            res.redirect('/student/dashboard');
+            res.redirect('/lecturer/dashboard');
         }
-        return res.render('login', { message: 'Wrong password.' })
+        return res.render('lectureLogin', { message: 'Wrong password.' })
     });
 
 
@@ -70,7 +71,7 @@ const logout = (req, res) => {
     localStorage.setItem('token', "");
 
 
-    return res.render('login', {message: 'Logout Successfull'})
+    return res.render('lectureLogin', {message: 'Logout Successfull'})
 }
 
 module.exports = {

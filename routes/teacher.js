@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const TeacherController = require('../controllers/teacher.ctrl');
 
 const router = Router();
 
@@ -20,8 +21,16 @@ router.get('/', (req, res) => {
     })
   })
   
+  router.get('/dashboard', (req, res) => {
+    res.render('lecturerDashboard', {
+      title: ' iLearn || Dashboard'
+    });
+});
 
 
+router.post('/signup',  TeacherController.create );
+router.post('/login',  TeacherController.login );
+router.post('/logout',  TeacherController.logout )
 
 
 module.exports = router;

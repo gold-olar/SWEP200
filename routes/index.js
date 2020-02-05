@@ -23,8 +23,4 @@ router.get('/contact_us', (req, res) => {
 });
 
 
-
-
-
-
 module.exports = router;

@@ -156,6 +156,11 @@
             <h2> Students's Sign Up</h2>
             <br>
             <br>
+            {{#if message}}
+            <p class="text-center text-white"> {{message}} </p>
+
+            {{else}}
+            {{/if}}
             <input type="text" name="username" id="" placeholder="Username">
             <select name="level">
                 <option value="" disabled selected hidden class="select">Select Learning Level</option>

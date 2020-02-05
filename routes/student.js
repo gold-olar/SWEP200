@@ -21,6 +21,12 @@ router.get('/login', (req, res) => {
     });
 })
 
+router.get('/dashboard', (req, res) => {
+    res.render('studentDashboard', {
+      title: ' iLearn || Dashboard'
+    });
+});
+
 router.post('/signup',  StudentController.create );
 router.post('/login',  StudentController.login );
 router.post('/logout',  StudentController.logout );
