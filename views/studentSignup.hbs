@@ -1,170 +1,179 @@
 <style>
-.left{
-    float: left;
-    margin-top: 10px;
+    .left {
+        float: left;
+        margin-top: 10px;
 
-}
-.right {
-    float: right;
-   margin-top: 10px;
-}
-div .block {
-    width: 90%;
-    margin-left: 5%;
-}
+    }
 
-.link:link,
-.link:visited {
-    color: #05203b;
-    border: 2px solid transparent;
-    padding-bottom: 10px;
-    background-color: transparent;
-    transition: color 0.2s, border 0.2s, padding-bottom 0.2s, background-color 0.2s ;
-}
-.link:hover,
-.link:active {
-    color: #dcdcdc;
-    border: 2px solid #05203b;
-    padding-bottom: 10px;
-    background-color: #05203b;
+    .right {
+        float: right;
+        margin-top: 10px;
+    }
+
+    div .block {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .link:link,
+    .link:visited {
+        color: #05203b;
+        border: 2px solid transparent;
+        padding-bottom: 10px;
+        background-color: transparent;
+        transition: color 0.2s, border 0.2s, padding-bottom 0.2s, background-color 0.2s;
+    }
+
+    .link:hover,
+    .link:active {
+        color: #dcdcdc;
+        border: 2px solid #05203b;
+        padding-bottom: 10px;
+        background-color: #05203b;
 
 
-}
+    }
 
 
 
-/* FORM  */
+    /* FORM  */
 
-.form-group {
-    width: 40%;
-    margin-left: 30%;
-    background-color: #05203b;
-    margin-top: 8%;
-    padding: 20px 0;
-    border-radius: 10px;
-}
-h2 {
-    text-align: center;
-    color: #fff;
-    font-size: 30px;
-    font-weight: 300;
-}
+    .form-group {
+        width: 40%;
+        margin-left: 30%;
+        background-color: #05203b;
+        margin-top: 8%;
+        padding: 20px 0;
+        border-radius: 10px;
+    }
 
-input {
-    margin: 0 13%;
-    width: 70%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 13px;
-}
- input:last-child {
-    margin-left: 55%;
-    margin-right: 0;
-    width: 5%;
-    margin-bottom: 20px;
-}
-option{
-    font-size: 13px;
-}
+    h2 {
+        text-align: center;
+        color: #fff;
+        font-size: 30px;
+        font-weight: 300;
+    }
 
-label{
-    font-size: 15px;
-    color: #fff;
-    width: 20%;
-    margin-bottom: 20px;
-}
+    input {
+        margin: 0 13%;
+        width: 70%;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 13px;
+    }
 
-button {
-    margin: 0 35%;
-    width: 30%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #05203b;
-    background-color: #fff;
+    input:last-child {
+        margin-left: 55%;
+        margin-right: 0;
+        width: 5%;
+        margin-bottom: 20px;
+    }
 
-}
-.alink{
-    margin-left:34%;
-    width: 50%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #acacac;
-    text-decoration: none;
-}
-.blink {
-    margin-left:1%;
-    width: 50%;
-    border-radius: 5px;
-    padding: 0px;
-    margin-bottom: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #acacac;
-    text-decoration: none;
-}
-.dash {
-    font-size: 20px;
-    color:#acacac ;
-}
-select{
-    margin: 0 13%;
-    width: 70%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
+    option {
+        font-size: 13px;
+    }
 
+    label {
+        font-size: 15px;
+        color: #fff;
+        width: 20%;
+        margin-bottom: 20px;
+    }
+
+    button {
+        margin: 0 35%;
+        width: 30%;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #05203b;
+        background-color: #fff;
+
+    }
+
+    .alink {
+        margin-left: 34%;
+        width: 50%;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #acacac;
+        text-decoration: none;
+    }
+
+    .blink {
+        margin-left: 1%;
+        width: 50%;
+        border-radius: 5px;
+        padding: 0px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #acacac;
+        text-decoration: none;
+    }
+
+    .dash {
+        font-size: 20px;
+        color: #acacac;
+    }
+
+    select {
+        margin: 0 13%;
+        width: 70%;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
 </style>
 
-    <header>
-        <div class="nav-logo">
-            <a href="/"><img src="images/school.png" class="logo " alt="Logo"></a>
-            <a href="/faq" class="support-btn">Support</a>
-        </div>
-        <div class="Navbar__Link Navbar__Link-toggle">
-            <img src="images/bars-solid.svg" width="25%" alt="">
-        </div>
-        <nav class="nav">
-            <ul class="nav__links">
-                <li><a href="/about">About</a></li>
-                <li><a href="/lecturers" class="sign-up">Lecturers</a></li>
-                <li><a href="/student">Students</a></li>
-                <li><a href="/contact_us" class="sign-up">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="nav-logo">
+        <a href="/"><img src="/images/school.png" class="logo " alt="Logo"></a>
+        <a href="/faq" class="support-btn">Support</a>
+    </div>
+    <div class="Navbar__Link Navbar__Link-toggle">
+        <img src="images/bars-solid.svg" width="25%" alt="">
+    </div>
+    <nav class="nav">
+        <ul class="nav__links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/lecturer" class="sign-up">Lecturers</a></li>
+            <li><a href="/student">Students</a></li>
+            <li><a href="/contact_us" class="sign-up">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
 <div class="form-group ">
     <div class="form">
-      <form action="/lecturer-sign-up" method="POST">
-      <h2> Students's Sign Up</h2>
-      <br>
-      <br>
-      <input type="text" name="username" id="" placeholder="Username">
-      <select nale="level">
-          <option value="" disabled selected hidden class="select">Select Learning Level</option>
-          <option value="100">100</option>
-          <option value="200">200</option>
-          <option value="300">300</option>
-          <option value="400">400</option>
-          <option value="500">500</option>
-        </select>
-      <input type="email" name="email" id="" placeholder="Email">
-      <input type="password" name="password" id="" placeholder="Password">
-      <input type="password" name="confirmPassword" id="" placeholder="Confirm Password">
+        <form action="/student/signup" method="POST">
+            <h2> Students's Sign Up</h2>
+            <br>
+            <br>
+            <input type="text" name="username" id="" placeholder="Username">
+            <select name="level">
+                <option value="" disabled selected hidden class="select">Select Learning Level</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+            </select>
+            <input type="email" name="email" id="" placeholder="Email">
+            <input type="password" name="password" id="" placeholder="Password">
+            <input type="password" name="confirmPassword" id="" placeholder="Confirm Password">
 
-      <button type="submit"> Sign Up </button>
-      <a href="/student-login" class="alink">Have an Account ? Login  </a>
-    </form>
-  </div>
-  </div>
-  <br>
-  <br>
-  <br>
+            <button type="submit"> Sign Up </button>
+            <a href="/student/login" class="alink">Have an Account ? Login </a>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<br>

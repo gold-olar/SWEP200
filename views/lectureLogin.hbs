@@ -124,7 +124,7 @@ button {
 
     <header>
         <div class="nav-logo">
-            <a href="/index"><img src="images/school.png" class="logo " alt="Logo"></a>
+            <a href="/"><img src="/images/school.png" class="logo " alt="Logo"></a>
             <a href="/faq" class="support-btn">Support</a>
         </div>
         <div class="Navbar__Link Navbar__Link-toggle">
@@ -133,7 +133,7 @@ button {
         <nav class="nav">
             <ul class="nav__links">
                 <li><a href="/about">About</a></li>
-                <li><a href="/lecturers" class="sign-up">Lecturers</a></li>
+                <li><a href="/lecturer" class="sign-up">Lecturers</a></li>
                 <li><a href="/student">Students</a></li>
                 <li><a href="/contact_us" class="sign-up">Contact</a></li>
             </ul>
@@ -145,18 +145,18 @@ button {
 
 <div class="form-group">
     <div class="form">
-      <form action="#">
+      <form action="/lecturer/login" method="POST">
       <h2> Lecturer's Log In</h2>
       <br>
       <br>
-      <input type="email" name="" id="" placeholder="Email">
-      <input type="password" name="" id="" placeholder="Password">
+      <input type="email" name="email" id="" placeholder="Email">
+      <input type="password" name="password" id="" placeholder="Password">
       <label>
         <input type="checkbox" name="subscribe" checked="checked" />
         Remember Password
         </label>
       <button type="submit"> Log In </button>
-      <a href="/lecturer_sign_up" class="alink">Create Account </a><span class="dash"> | </span><a href="" class="blink"> Forgot Password?</a>
+      <a href="/lecturer/signup" class="alink">Create Account </a><span class="dash"> | </span><a href="/forgotpassword" class="blink"> Forgot Password?</a>
     </form>
   </div>
   </div>
