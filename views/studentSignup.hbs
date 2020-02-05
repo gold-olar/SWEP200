@@ -74,13 +74,7 @@ label{
     width: 20%;
     margin-bottom: 20px;
 }
-select{
-    margin: 0 13%;
-    width: 74%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
+
 button {
     margin: 0 35%;
     width: 30%;
@@ -94,7 +88,7 @@ button {
 
 }
 .alink{
-    margin-left:30%;
+    margin-left:34%;
     width: 50%;
     border-radius: 5px;
     padding: 10px;
@@ -119,12 +113,19 @@ button {
     font-size: 20px;
     color:#acacac ;
 }
+select{
+    margin: 0 13%;
+    width: 70%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
 
 </style>
 
     <header>
         <div class="nav-logo">
-            <a href="/index"><img src="images/school.png" class="logo " alt="Logo"></a>
+            <a href="/"><img src="images/school.png" class="logo " alt="Logo"></a>
             <a href="/faq" class="support-btn">Support</a>
         </div>
         <div class="Navbar__Link Navbar__Link-toggle">
@@ -139,27 +140,31 @@ button {
             </ul>
         </nav>
     </header>
-    <br>
-    <br>
-    <br>
 
-<div class="form-group">
+<div class="form-group ">
     <div class="form">
-      <form action="#">
-      <h2> Lecturer's Log In</h2>
+      <form action="/lecturer-sign-up" method="POST">
+      <h2> Students's Sign Up</h2>
       <br>
       <br>
-      <input type="email" name="" id="" placeholder="Email">
-      <input type="password" name="" id="" placeholder="Password">
-      <label>
-        <input type="checkbox" name="subscribe" checked="checked" />
-        Remember Password
-        </label>
-      <button type="submit"> Log In </button>
-      <a href="/lecturer_sign_up" class="alink">Create Account </a><span class="dash"> | </span><a href="" class="blink"> Forgot Password?</a>
+      <input type="text" name="username" id="" placeholder="Username">
+      <select nale="level">
+          <option value="" disabled selected hidden class="select">Select Learning Level</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="300">300</option>
+          <option value="400">400</option>
+          <option value="500">500</option>
+        </select>
+      <input type="email" name="email" id="" placeholder="Email">
+      <input type="password" name="password" id="" placeholder="Password">
+      <input type="password" name="confirmPassword" id="" placeholder="Confirm Password">
+
+      <button type="submit"> Sign Up </button>
+      <a href="/student-login" class="alink">Have an Account ? Login  </a>
     </form>
   </div>
   </div>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>

@@ -9,12 +9,21 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/about', (req, res) => {
+  res.render('about', {
+    title: 'About Us'
+  });
+});
+
+
 router.get('/contact_us', (req, res) => {
   res.render('contact', {
     title: 'Contact Us'
   });
 });
 
+
+//  Lecturers 
 router.get('/lecturers', (req, res) => {
   res.render('lecturer', {
     title: 'Teacher'
@@ -31,6 +40,8 @@ router.get('/lecturer_sign_up', (req, res) => {
     title: "Lecturer's || Sign Up",
   })
 })
+
+// Students
 router.get('/student', (req, res) => {
   res.render('student', {
     title: 'Student'
@@ -42,5 +53,12 @@ router.get('/student_sign_up', (req, res) => {
     title: 'Student || Sign Up'
   })
 })
+
+router.get('/student-login', (req, res) => {
+  res.render('studentsLogin', {
+    title: 'Student || Login'
+  });
+})
+
 
 module.exports = router;
