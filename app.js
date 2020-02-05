@@ -3,12 +3,25 @@ const express = require('express');
 const httpErrors = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
+const mongoose = require('mongoose');
+const db = require('./config/database');
+require('dotenv').config();
+
 
 const indexRouter = require('./routes/index');
 const teacherRouter = require('./routes/teacher');
 const studentRouter = require('./routes/student');
 
+
 const app = express();
+
+// Database Connection
+mongoose.connect(db.mongoURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('Connected to Database...'))
+  .catch(err => console.log(err));
 
 app.set('views', path.join(__dirname, 'views'));
 // view engine setup

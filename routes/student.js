@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const StudentController = require('../controllers/student.ctrl');
 
 const router = Router();
 
@@ -20,6 +21,9 @@ router.get('/login', (req, res) => {
     });
 })
 
+router.post('/signup',  StudentController.create );
+router.post('/login',  StudentController.login );
+router.post('/logout',  StudentController.logout );
 
 
 module.exports = router;
