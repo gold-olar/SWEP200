@@ -47,7 +47,7 @@ const login = async (req, res) => {
     const { email, password } = req.body;
     const user = await Student.findOne({ email });
     if (!user)
-        return res.render('login', { message: 'User not found, please register' });
+        return res.render('studentsLogin', { message: 'User not found, please register' });
 
     await bcrypt.compare(password, user.password, (err, isMatch) => {
         if (isMatch) {
@@ -62,7 +62,7 @@ const login = async (req, res) => {
             res.cookie('auth', token);
             res.redirect('/student/dashboard');
         }
-        return res.render('login', { message: 'Wrong password.' })
+        return res.render('studentsLogin', { message: 'Wrong password.' })
     });
 
 
@@ -78,7 +78,7 @@ const logout = (req, res) => {
      store.clearAll()
 
 
-    return res.render('login', {message: 'Logout Successfull'})
+    return res.render('studentsLogin', {message: 'Logout Successfull'})
 }
 
 module.exports = {
