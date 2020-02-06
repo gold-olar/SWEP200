@@ -3,6 +3,8 @@ const Student = require('../models/Student');
 const Secret = process.env.SECRET;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const store = require('store');
+
 
 
 const create = async (req, res) => {
@@ -51,7 +53,11 @@ const login = async (req, res) => {
         if (isMatch) {
             let tokenData = { userId: user._id, username: user.username }
             let token = jwt.sign(tokenData, Secret);
-            // localStorage.setItem('token', token);
+
+            
+            // store user details
+            store.set('user', user);
+            store.set('token', token);
 
             res.cookie('auth', token);
             res.redirect('/student/dashboard');
@@ -67,7 +73,9 @@ const logout = (req, res) => {
     res.cookie('auth', '');
     let token = req.cookies.auth;
     token = '';
-    localStorage.setItem('token', "");
+    
+     // Clear Store
+     store.clearAll()
 
 
     return res.render('login', {message: 'Logout Successfull'})
