@@ -1,1 +1,217 @@
-Welcome to the Student dashboard
+<style>
+    .grid-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+      "sidenav header"
+      "sidenav main"
+      "sidenav footer";
+    height: 100vh;
+  }
+  
+  /* Give every child element its grid name */
+
+  
+  .main {
+    grid-area: main;
+    height: 100%;
+  }
+  header{
+      display: none !important;
+  }
+    .sidenav {
+        display: flex; /* Will be hidden on mobile */
+        flex-direction: column;
+        grid-area: sidenav;
+        background-color: #05203b;
+      }
+    
+      .sidenav__list {
+        padding: 0;
+        margin-top: 85px;
+        list-style-type: none;
+      }
+    
+      .sidenav__list-item {
+        padding: 20px 20px 20px 40px;
+        color: #ddd;
+      }
+    
+      .sidenav__list-item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+      }
+
+      .main-header {
+        /* display: flex; */
+        justify-content: space-between;
+        margin: 5px;
+        margin-left: 15%;
+        padding: 20px;
+        width: 60%;
+        border-radius: 15px;
+        background-color: #f1f1f1;
+        color: slategray;
+      }
+
+      .main-overview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); /* Where the magic happens */
+        grid-auto-rows: 94px;
+        grid-gap: 20px;
+        margin: 20px;
+      }
+      
+      .overviewcard {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #d3d3;
+      }
+
+
+      
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #82bef6;
+        margin-bottom: 20px;
+        -webkit-column-break-inside: avoid;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+    
+      .logo {
+        border-radius: 50%;
+        height: 70px;
+        width: auto;
+        margin-left: 10%;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      .logo h3{
+          font-size: 170%;
+      }
+      .caption {
+          font-size: 15px;
+          color: #fff;
+          display: block;
+          width: 100%;
+         margin-left: 15%;
+      }
+     .top-icon a {
+        margin: 10px;
+        margin-left: 75%;
+        padding: 20px;
+        height: 50px; /* Force our height since we don't have actual content yet */
+        width: 10%;
+        font-size: 30px;
+        text-decoration: none;
+        color: #05203b;
+        
+     }
+     .side-head {
+         margin-bottom: 30px;
+     }
+
+     .icon-small {
+         margin-right: 10px;
+     }
+     .header-main {
+         width: 100%;
+     }
+     .main-img-capt {
+        margin-right: 20%;
+        width: 90%;
+     }
+     .main-img {
+        width: auto;
+        height: 40px;
+        vertical-align: middle;
+        border-radius: 50%;
+        border: 1px solid #05203b;
+        margin-right: 10px;
+     }
+     .time {
+         font-size: 12px;
+     }
+     .ann p{
+         margin-top: 10px;
+         margin-bottom: 10px;
+         font-size: 13px;
+         
+     }
+     .border {
+         width: 100%;
+         border-bottom: 1px solid #05203b;
+     }
+     .main-comment {
+          /* display: flex; */
+        justify-content: space-between;
+        margin-bottom: 30px;
+        margin-left: 25%;
+        padding-right: 35px;
+        height: 30px; /* Force our height since we don't have actual content yet */
+        width: 50%;
+        border-radius: 7px;
+        background-color: #f1f1f1;
+        color: slategray;
+      }
+     .comment-img {
+        width: auto;
+        height: 20px;
+        margin: 7px;
+        border-radius: 50%;
+        vertical-align: middle;
+     }
+     .comment-cm {
+        font-size: 10px;
+     }
+     .nav-links {
+         text-decoration: none;
+         color: #fff;
+     }
+</style>
+   <div class="grid-container">
+
+
+        <header class="header">
+          
+        </header>
+
+
+        <aside class="sidenav">
+            <ul class="sidenav__list">
+                <div class="side-head">
+                <li><img src={{image}} class="logo" alt=""><span class="caption">John Doe</span></li>
+                </div>
+
+                <li class="sidenav__list-item"><a href="#" class="nav-links"><i class="icofont-alarm icon-small"></i> Posts </a></li>
+                <li class="sidenav__list-item"><a href="#" class="nav-links"><i class="icofont-wheelchair icon-small"></i>Forum</a></li>
+                <li class="sidenav__list-item"><a href="#" class="nav-links"><i class="icofont-ui-user icon-small"></i> Profile</a></li>
+          
+              </ul>
+        </aside>
+
+        <main class="main">
+            <div class="top-icon">
+             <a href=""><i class="icofont-settings-alt "></i></a>
+            </div>
+            <div class="main-header">
+                <div class="header-main">
+                    <img src="/images/customer-2.jpg" class="main-img" alt=""><span class="main-img-capt">Mrs Evelyn <span class="time"> 12:30</span></span>
+                </div>
+                <div class="ann">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi temporibus libero doloremque sit fugiat sapiente dolorum ad dignissimos cumque, cum porro ea ex quod, repudiandae, velit tempore explicabo voluptatum amet.</p>
+
+                </div>
+                
+               
+              
+              </div>            
+        </main>
+    </div>
