@@ -11,19 +11,19 @@ const create = async (req, res) => {
     try {
         const { username, password, email, level, confirmPassword } = req.body;
         if (!username || !password || !email || !level) {
-            res.render('create', {
+            res.render("studentSignup", {
                 message: 'Please fill in all fields.'
             })
         }
         if(password !== confirmPassword){
-            res.render('create', {
+            res.render("studentSignup", {
                 message: `Passwords don't match`,
             })
         }
 
         const existingUser = await Student.findOne({ email });
         if (existingUser)
-            return res.render('create', { message: "User already exists with this email." })
+            return res.render("studentSignup", { message: "User already exists with this email." })
 
 
         const userParams = { username, password, email, level };
