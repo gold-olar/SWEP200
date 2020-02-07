@@ -15,7 +15,6 @@ router.get('/about', (req, res) => {
   });
 });
 
-
 router.get('/contact_us', (req, res) => {
   res.render('contact', {
     title: ' iLearn || Contact Us'
