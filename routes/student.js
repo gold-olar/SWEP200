@@ -38,6 +38,11 @@ router.get('/dashboard', (req, res) => {
       username,
     });
 });
+router.get("/chat-signup", (req, res)=>{
+    res.render("chatSignup",{
+        title: "iLearn || cSignup"
+    })
+  })
 
 router.post('/signup',  StudentController.create );
 router.post('/login',  StudentController.login );
