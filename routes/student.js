@@ -1,8 +1,10 @@
 const { Router } = require('express');
 const StudentController = require('../controllers/student.ctrl');
 const gravatar = require('gravatar');
-const store = require('store');
-const user = store.get('user');
+// const store = require('store');
+// const user = store.get('user');
+const Post = require('../models/Post');
+
 
 let image;
 image = gravatar.url("sam99kupo@gmail.com");
@@ -27,15 +29,16 @@ router.get('/login', (req, res) => {
     });
 })
 
-router.get('/dashboard', (req, res) => {
-    const user = store.get('user');
-    let  { email, username,} = user;
-    image = gravatar.url(email);
+router.get('/dashboard', async (req, res) => {
+  const {user} = req.cookies;
+  console.log(user)
+  let posts = await Post.find({level: user.level});
 
     res.render('studentDashboard', {
       title: ' iLearn || Dashboard',
-      image, 
-      username,
+      image: gravatar.url(user.email),
+      username: user.username,
+      posts,
     });
 });
 router.get("/chat-signup", (req, res)=>{
@@ -46,7 +49,7 @@ router.get("/chat-signup", (req, res)=>{
 
 router.post('/signup',  StudentController.create );
 router.post('/login',  StudentController.login );
-router.post('/logout',  StudentController.logout );
+router.get('/logout',  StudentController.logout );
 
 
 module.exports = router;

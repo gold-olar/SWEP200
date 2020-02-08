@@ -4,6 +4,7 @@ const Secret = process.env.SECRET;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const store = require('store');
+const gravatar = require('gravatar');
 
 
 const create = async (req, res) => {
@@ -55,10 +56,15 @@ const login = async (req, res) => {
             let token = jwt.sign(tokenData, Secret);
 
             // Store details in store
-            store.set('user', user);
-            store.set('token', token);
+           res.cookie('user', user);
+           res.cookie('token', token);
 
             res.cookie('auth', token);
+            // res.render('lecturerDashboard', {
+            //   title: ' iLearn || Dashboard',
+            //   username: user.username,
+            //   image: gravatar.url(user.email),
+            // });
             res.redirect('/lecturer/dashboard');
         }
         return res.render('lectureLogin', { message: 'Wrong password.' })
@@ -72,7 +78,7 @@ const logout = (req, res) => {
     res.cookie('auth', '');
     let token = req.cookies.auth;
     token = '';
-    
+
     // Clear Store
     store.clearAll()
 

@@ -12,7 +12,10 @@ const { generateMessage, generateLocationMessage } = require('./src/utils/messag
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./src/utils/users')
 const app = express();
 const server = http.createServer(app)
-const io = socketio(server)
+const io = socketio(server);
+const bodyParser= require('body-parser')
+const multer = require('multer');
+app.use(bodyParser.urlencoded({extended: true}))
 
 require('dotenv').config();
 

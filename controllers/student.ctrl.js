@@ -54,10 +54,10 @@ const login = async (req, res) => {
             let tokenData = { userId: user._id, username: user.username }
             let token = jwt.sign(tokenData, Secret);
 
-            
+
             // store user details
-            store.set('user', user);
-            store.set('token', token);
+            res.cookie('user', user);
+            res.cookie('token', token);
 
             res.cookie('auth', token);
             res.redirect('/student/dashboard');
@@ -73,7 +73,7 @@ const logout = (req, res) => {
     res.cookie('auth', '');
     let token = req.cookies.auth;
     token = '';
-    
+
      // Clear Store
      store.clearAll()
 

@@ -298,33 +298,24 @@
         </aside>
 
         <main class="main">
-          <div class="form-group">
-              <div class="form">
-                <form action="/lecturer/createPost" method="post">
-                <h2> Add Post </h2>
-                <br>
-                {{#if message}}
-                <p class="text-center text-white"> {{message}} </p>
+          {{#each posts}}
 
-                {{else}}
-                {{/if}}
-                <input type="text" name="title" id="" placeholder="Title...">
-                <select name="level">
-                  <option  disabled selected hidden class="select">Select Learning Level</option>
-                  <option value="100">100</option>
-                  <option value="200">200</option>
-                  <option value="300">300</option>
-                  <option value="400">400</option>
-                  <option value="500">500</option>
-                </select>
-                <textarea name="body" placeholder="Make an announcement..." id="" cols="30" rows="10"></textarea>
-                <button type="submit"> Post </button>
-              </form>
+          <div class="main-header">
+              <div class="header-main">
+                  <img src="{{image}}" class="main-img" alt=""><span class="main-img-capt"> <b> {{title}}</b> <span class="time">  for <b> {{level}} </b> level students </span></span>
               </div>
-          </div>
+              <div class="ann">
+                  <p>  {{body}} </p>
 
+              </div>
+            </div>
+
+          {{/each}}
         </main>
         <br/>
         <br/>
         <br/>
     </div>
+    <br>
+    <br>
+    <br>
