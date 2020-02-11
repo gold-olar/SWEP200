@@ -138,7 +138,6 @@
      }
      .time {
          font-size: 12px;
-         float: right !important;
      }
      .ann p{
          margin-top: 10px;
@@ -202,16 +201,14 @@
 
         <main class="main">
 
-          {{#each posts}}
+          {{#each materials}}
           <div class="main-header">
               <div class="header-main">
-                <h4> {{title}} </h4>
-                <br>
-                  <span class="main-img-capt"> <small> From </small> <b> {{author}}</b> <span class="time "> 12:30</span></span>
+                  <span class="main-img-capt"> From <b> {{owner}}</b> <span class="time">    </span></span>
               </div>
               <div class="ann">
                   <p>
-                    {{body}}
+                    <a href="/student/download/{{path}}"> Download {{name}}</a>
                   </p>
               </div>
 

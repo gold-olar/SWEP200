@@ -138,7 +138,6 @@
      }
      .time {
          font-size: 12px;
-         float: right !important;
      }
      .ann p{
          margin-top: 10px;
@@ -176,6 +175,103 @@
          text-decoration: none;
          color: #fff;
      }
+     /* FORM  */
+
+ .form-group {
+   width: 70%;
+   margin-left: 15%;
+   background-color: #05203b;
+   margin-top: 50px;
+   padding: 20px 0;
+   border-radius: 10px;
+ }
+ h2 {
+   text-align: center;
+   color: #fff;
+   font-size: 30px;
+   font-weight: 300;
+ }
+
+ input {
+   margin: 0 13%;
+   width: 70%;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 20px;
+   font-size: 13px;
+ }
+ input:last-child {
+   margin-left: 55%;
+   margin-right: 0;
+   width: 5%;
+   margin-bottom: 20px;
+ }
+ textarea{
+   margin: 0 13%;
+   width: 70%;
+   height: 200px;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 20px;
+   font-size: 13px;
+ }
+ option{
+   font-size: 13px;
+ }
+ select{
+   margin: 0 13%;
+   width: 70% ;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 20px;
+ }
+
+ label{
+   font-size: 15px;
+   color: #fff;
+   width: 20%;
+   margin-bottom: 20px;
+ }
+
+ button {
+   margin: 0 35%;
+   width: 30%;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 20px;
+   font-size: 15px;
+   font-weight: 700;
+   color: #05203b;
+   background-color: #fff;
+
+ }
+ .alink{
+   margin-left:30%;
+   width: 50%;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 20px;
+   font-size: 13px;
+   font-weight: 600;
+   color: #acacac;
+   text-decoration: none;
+ }
+ .blink {
+   margin-left:1%;
+   width: 50%;
+   border-radius: 5px;
+   padding: 0px;
+   margin-bottom: 20px;
+   font-size: 13px;
+   font-weight: 600;
+   color: #acacac;
+   text-decoration: none;
+ }
+ .dash {
+   font-size: 20px;
+   color:#acacac ;
+ }
+
 </style>
    <div class="grid-container">
 
@@ -191,33 +287,37 @@
                 <li><img src={{image}} class="logo" alt=""><span class="caption"> <b> @{{username}}  </b> </span></li>
                 </div>
 
-                <li class="sidenav__list-item"><a href="/student/dashboard" class="nav-links"><i class="icofont-alarm icon-small"></i> Posts </a></li>
-                <li class="sidenav__list-item"><a href="/student/dashboard/download/materials" class="nav-links"><i class="icofont-alarm icon-small"></i> Download Materials </a></li>
-                <li class="sidenav__list-item"><a href="/student/forum" class="nav-links"><i class="icofont-wheelchair icon-small"></i>Forum</a></li>
-                <li class="sidenav__list-item"><a href="/student/dashboard/profile" class="nav-links"><i class="icofont-ui-user icon-small"></i> Profile</a></li>
-                <li class="sidenav__list-item"><a href="/student/logout" class="nav-links"><i class="icofont-ui-user icon-small"></i> Log Out</a></li>
+                <li class="sidenav__list-item"><a href="/lecturer/dashboard" class="nav-links"><i class="icofont-alarm icon-small"></i> Create Posts </a></li>
+                <li class="sidenav__list-item"><a href="/lecturer/dashboard/post/materials" class="nav-links"><i class="icofont-alarm icon-small"></i> Upload Materials </a></li>
+                <li class="sidenav__list-item"><a href="/lecturer/dashboard/posts" class="nav-links"><i class="icofont-alarm icon-small"></i>My  Posts </a></li>
+                <li class="sidenav__list-item"><a href="/lecturer/forum" class="nav-links"><i class="icofont-wheelchair icon-small"></i>Forum</a></li>
+                <li class="sidenav__list-item"><a href="/lecturer/profile" class="nav-links"><i class="icofont-ui-user icon-small"></i> Profile</a></li>
+                <li class="sidenav__list-item"><a href="/lecturer/logout" class="nav-links"><i class="icofont-ui-user icon-small"></i> Log Out</a></li>
 
               </ul>
         </aside>
 
         <main class="main">
-
-          {{#each posts}}
-          <div class="main-header">
-              <div class="header-main">
-                <h4> {{title}} </h4>
+          <div class="form-group">
+              <div class="form">
+                <form action="/lecturer/createPost" method="post">
+                <h2> Edit Profile </h2>
                 <br>
-                  <span class="main-img-capt"> <small> From </small> <b> {{author}}</b> <span class="time "> 12:30</span></span>
+                {{#if message}}
+                <p class="text-center text-white"> {{message}} </p>
+
+                {{else}}
+                {{/if}}
+                <input type="text" name="username" id="" placeholder="Username" value="{{username}}">
+                <input type="email" name="email" id="" placeholder="Email" value="{{email}}">
+                <input type="password" name="email" id="" placeholder="New Password" >
+                <button type="submit"> Edit Profile </button>
+              </form>
               </div>
-              <div class="ann">
-                  <p>
-                    {{body}}
-                  </p>
-              </div>
+          </div>
 
-
-
-            </div>
-          {{/each}}
         </main>
+        <br/>
+        <br/>
+        <br/>
     </div>

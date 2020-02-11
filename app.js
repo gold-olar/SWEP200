@@ -15,6 +15,8 @@ const server = http.createServer(app)
 const io = socketio(server);
 const bodyParser= require('body-parser')
 const multer = require('multer');
+
+
 app.use(bodyParser.urlencoded({extended: true}))
 
 require('dotenv').config();
@@ -59,7 +61,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {title: "Mad Oh..."});
 });
 io.on('connection', (socket) => {
   console.log('New WebSocket connection')

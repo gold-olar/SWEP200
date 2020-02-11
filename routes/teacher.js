@@ -1,24 +1,27 @@
 const { Router } = require('express');
 const TeacherController = require('../controllers/teacher.ctrl');
+const MaterialController = require('../controllers/material.ctrl');
 const PostController = require('../controllers/post.ctrl');
 const gravatar = require('gravatar');
 const Post = require('../models/Post');
-// const store = require('store');
-// const user = store.get('user');
 const bodyParser= require('body-parser')
-const multer = require('multer');
-
+const multer=require('multer');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads')
+      cb(null, 'uploads/')
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
+      cb(null, file.originalname);
   }
-})
+});
 
-var upload = multer({ storage: storage })
+var upload = multer({
+  storage: storage
+});
+
+// default options
+
 
 
 const router = Router();
@@ -30,7 +33,18 @@ router.get('/', (req, res) => {
     });
   });
 
-  router.get('/login', (req, res) => {
+router.get('/profile', (req, res) => {
+  const {user} = req.cookies;
+
+  res.render('lecturerProfile', {
+    title: "Lecturer's || Edit Profile",
+    username: user.username,
+    image: gravatar.url(user.email),
+    email: user.email,
+  })
+})
+
+router.get('/login', (req, res) => {
     res.render('lectureLogin', {
       title: "Lecturer's || Login",
     })
@@ -72,29 +86,7 @@ router.get('/dashboard/post/materials',  (req, res) => {
 });
 
 })
-router.post('/upload', upload.single('file'), async (req, res, next) => {
-  console.log("111111111111111111111111111111")
-  const {user} = req.cookies;
-  const file = req.file;
-  const material = fs.readFileSync(req.file.path);
-  const encode_material = material.toString('base64');
-  console.log(encode_material)
-  console.log(material)
-  var final = {
-      contentType: req.file.mimetype,
-      material:  new Buffer(encode_material, 'base64')
-   };
-   console.log(final);
-  // if (!file) {
-  //   res.render('lecturerUpload', {
-  //     title: ' iLearn || Dashboard',
-  //     username: user.username,
-  //     message: "Please upload a file",
-  //     image: gravatar.url(user.email),
-  //   })
-  // }
-    res.send(file);
-})
+router.post('/upload', upload.any(), MaterialController.upload )
 
 
 router.post('/signup',  TeacherController.create );

@@ -74,9 +74,6 @@ const logout = (req, res) => {
     let token = req.cookies.auth;
     token = '';
 
-     // Clear Store
-     store.clearAll()
-
 
     return res.render('studentsLogin', {message: 'Logout Successfull'})
 }

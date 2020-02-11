@@ -12,7 +12,10 @@
 
   /* Give every child element its grid name */
 
-
+  input[file] {
+    width: 100% !important;
+    color: white !important;
+  }
   .main {
     grid-area: main;
     height: 100%;
@@ -309,6 +312,14 @@
                 {{else}}
                 {{/if}}
                 <input type="file" name="file" />
+                <select name="level">
+                  <option  disabled selected hidden class="select">Select Learning Level</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                  <option value="300">300</option>
+                  <option value="400">400</option>
+                  <option value="500">500</option>
+                </select>
 
                 <button type="submit"> Post </button>
               </form>
