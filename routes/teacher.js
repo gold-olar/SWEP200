@@ -44,6 +44,17 @@ router.get('/profile', (req, res) => {
   })
 })
 
+router.get('/forum', (req, res) => {
+  const {user} = req.cookies;
+
+  res.render('chat', {
+    title: "Lecturer's || Edit Profile",
+    username: user.username,
+    image: gravatar.url(user.email),
+    email: user.email,
+  })
+})
+
 router.get('/login', (req, res) => {
     res.render('lectureLogin', {
       title: "Lecturer's || Login",

@@ -1,4 +1,5 @@
 const Material = require('../models/Material');
+const gravatar = require('gravatar');
 
 
 const upload = async (req, res) => {
@@ -20,7 +21,9 @@ const upload = async (req, res) => {
 
 
         res.render('lecturerUpload', {
-            message: "Uploaded Succesfully"
+            message: "Uploaded Succesfully",
+            username: user.username,
+            image: gravatar.url(user.email),
         })
     } catch (error) {
       console.log(error);

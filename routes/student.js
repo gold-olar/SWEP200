@@ -17,6 +17,12 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/forum', (req, res) => {
+    res.render('chat', {
+        title: 'Student'
+    });
+});
+
 router.get('/signup', (req, res) => {
     res.render('studentSignup', {
         title: 'Student || Sign Up'
